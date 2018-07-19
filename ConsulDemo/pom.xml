@@ -26,6 +26,7 @@
     </properties>
 
     <dependencies>
+        <!--引入consul-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
