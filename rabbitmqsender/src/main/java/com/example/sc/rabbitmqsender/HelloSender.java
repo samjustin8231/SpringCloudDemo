@@ -16,4 +16,14 @@ public class HelloSender {
         template.convertAndSend("queue","hello,rabbit~");
     }
 
+    public void sendUserObject() {
+        User user=new User();    //实现Serializable接口
+        user.setUserName("sam");
+        user.setPassword("123");
+        template.convertAndSend("queue",user);
+    }
+
+    public void sendTopic() {
+        template.convertAndSend("exchange", "topic.message", "hello, rabbit");
+    }
 }

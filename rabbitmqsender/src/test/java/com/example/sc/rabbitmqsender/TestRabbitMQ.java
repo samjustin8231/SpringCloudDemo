@@ -14,7 +14,17 @@ public class TestRabbitMQ {
     private HelloSender helloSender;
 
     @Test
-    public void testRabbit() {
+    public void testRabbitSendString() {
         helloSender.sendString();
+    }
+
+    @Test
+    public void testRabbitSendUser() {
+        helloSender.sendUserObject();
+    }
+
+    @Test
+    public void testRabbitSendTopic() {
+        helloSender.sendTopic();
     }
 }

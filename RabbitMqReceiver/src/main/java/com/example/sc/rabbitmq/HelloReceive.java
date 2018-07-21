@@ -11,4 +11,18 @@ public class HelloReceive {
         System.out.println("Receive:"+str);
     }
 
+
+    @RabbitListener(queues="queue")    //监听器监听指定的Queue
+    public void process1(User user) {    //用User作为参数
+        System.out.println("Receive1:"+user);
+    }
+
+    @RabbitListener(queues="topic.message")    //监听器监听指定的Queue
+    public void process1(String str) {
+        System.out.println("message:"+str);
+    }
+    @RabbitListener(queues="topic.messages")    //监听器监听指定的Queue
+    public void process2(String str) {
+        System.out.println("messages:"+str);
+    }
 }
