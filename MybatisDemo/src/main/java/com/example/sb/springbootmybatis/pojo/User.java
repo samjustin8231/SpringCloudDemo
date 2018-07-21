@@ -1,13 +1,14 @@
-package com.example.sb.springbootmybatis;
+package com.example.sb.springbootmybatis.pojo;
 
 import java.util.Objects;
 
 public class User {
 
     private Integer id;
-    private String name;
+    private String userName;
     private String password;
     private String phone;
+    private Integer age;
 
     public Integer getId() {
         return id;
@@ -17,12 +18,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -47,7 +48,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(id, user.id) &&
-                Objects.equals(name, user.name) &&
+                Objects.equals(userName, user.userName) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(phone, user.phone);
     }
@@ -55,6 +56,6 @@ public class User {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, password, phone);
+        return Objects.hash(id, userName, password, phone);
     }
 }

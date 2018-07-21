@@ -1,5 +1,7 @@
 package com.example.sb.springbootmybatis;
 
+import com.example.sb.springbootmybatis.dao.UserMapperForAnotation;
+import com.example.sb.springbootmybatis.pojo.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,24 +15,29 @@ import org.springframework.transaction.annotation.Transactional;
 public class SpringbootMybatisApplicationTests {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserMapperForAnotation userMapperForAnotation;
 
     @Test
-    public void testInsertAndQuery(){
+    public void testInsert(){
 
-        userMapper.insert("winterchen", "123456", "12345678910");
-        User u = userMapper.findUserByPhone("12345678910");
-        Assert.assertEquals("winterchen", u.getName());
+        int count = userMapperForAnotation.insert("sam", "123456", "17717372410");
+        Assert.assertEquals(1, count);
+    }
+
+    @Test
+    public void testQuery(){
+        User u = userMapperForAnotation.findUserByPhone("12345678910");
+        Assert.assertEquals("winterchen", u.getUserName());
     }
 
     @Test
     @Transactional
     public void testTransaction(){
 
-        userMapper.insert("张三", "123456", "18600000000");
+        userMapperForAnotation.insert("张三", "123456", "18600000000");
         int a = 1/0;
-        userMapper.insert("李四", "123456", "13500000000");
-        User u = userMapper.findUserByPhone("12345678910");
-        Assert.assertEquals("winterchen", u.getName());
+        userMapperForAnotation.insert("李四", "123456", "13500000000");
+        User u = userMapperForAnotation.findUserByPhone("12345678910");
+        Assert.assertEquals("winterchen", u.getUserName());
     }
 }
