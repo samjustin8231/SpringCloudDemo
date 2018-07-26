@@ -34,6 +34,19 @@ public class City implements Serializable {
      */
     private String description;
 
+    /**
+     * 城市评分
+     */
+    private Integer score;
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
+
     public Long getId() {
         return id;
     }

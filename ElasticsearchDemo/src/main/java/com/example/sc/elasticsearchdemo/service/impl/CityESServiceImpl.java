@@ -28,6 +28,12 @@ public class CityESServiceImpl implements CityService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CityESServiceImpl.class);
 
+    // 分页参数 -> TODO 代码可迁移到具体项目的公共 common 模块
+    private static final Integer pageNumber = 0;
+    private static final Integer pageSize = 10;
+    Pageable pageable = new PageRequest(pageNumber, pageSize);
+
+    // ES 操作类
     @Autowired
     CityRepository cityRepository;
 
@@ -61,6 +67,26 @@ public class CityESServiceImpl implements CityService {
 
         Page<City> searchPageResults = cityRepository.search(searchQuery);
         return searchPageResults.getContent();
+    }
+
+    public List<City> findByDescriptionAndScore(String description, Integer score) {
+        return cityRepository.findByDescriptionAndScore(description, score);
+    }
+
+    public List<City> findByDescriptionOrScore(String description, Integer score) {
+        return cityRepository.findByDescriptionOrScore(description, score);
+    }
+
+    public List<City> findByDescription(String description) {
+        return cityRepository.findByDescription(description, pageable).getContent();
+    }
+
+    public List<City> findByDescriptionNot(String description) {
+        return cityRepository.findByDescriptionNot(description, pageable).getContent();
+    }
+
+    public List<City> findByDescriptionLike(String description) {
+        return cityRepository.findByDescriptionLike(description, pageable).getContent();
     }
 
 }
