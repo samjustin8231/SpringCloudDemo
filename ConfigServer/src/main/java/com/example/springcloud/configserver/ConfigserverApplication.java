@@ -9,6 +9,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 public class ConfigserverApplication {
 
     public static void main(String[] args) {
+        //test
         SpringApplication.run(ConfigserverApplication.class, args);
     }
 }
