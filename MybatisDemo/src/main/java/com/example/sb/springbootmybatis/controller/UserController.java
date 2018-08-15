@@ -23,4 +23,9 @@ public class UserController {
         User user = this.userService.getUserById(userId);
         return user;
     }
+
+    public void test1() {
+        int a;
+        int b;
+    }
 }
