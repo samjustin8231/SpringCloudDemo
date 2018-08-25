@@ -1,6 +1,6 @@
 package com.example.sb.springbootmybatis.controller;
 
-import com.example.sb.springbootmybatis.pojo.User;
+import com.example.sb.springbootmybatis.pojo.UserDO;
 import com.example.sb.springbootmybatis.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +18,9 @@ public class UserController {
 
     @RequestMapping("/showUser")
     @ResponseBody
-    public User toIndex(HttpServletRequest request, Model model){
+    public UserDO toIndex(HttpServletRequest request, Model model){
         int userId = Integer.parseInt(request.getParameter("id"));
-        User user = this.userService.getUserById(userId);
+        UserDO user = this.userService.getUserById(userId);
         return user;
     }
 }
