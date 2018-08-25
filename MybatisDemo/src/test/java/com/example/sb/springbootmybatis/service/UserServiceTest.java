@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.sb.springbootmybatis.util.StringConstant.PRE_USER_INFO;
+
 /**
  * 类的实现描述：TODO 类实现描述
  *
@@ -34,7 +36,6 @@ import java.util.Map;
 @SpringBootTest
 public class UserServiceTest {
 
-    public static final String PRE_USER_INFO = "userinfo_";
     private final static Logger logger = LoggerFactory.getLogger(UserServiceTest.class);
     @Resource
     private UserService userService;
