@@ -1,6 +1,6 @@
 package org.github.es.controller;
 
-import org.github.es.ESWebStatusEnum;
+import org.github.es.enums.ESWebStatusEnum;
 import org.github.es.vo.ResponseVo;
 
 /**

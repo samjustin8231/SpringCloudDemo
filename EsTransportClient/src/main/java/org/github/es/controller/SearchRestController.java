@@ -1,7 +1,7 @@
 package org.github.es.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import org.github.es.ESWebStatusEnum;
+import org.github.es.enums.ESWebStatusEnum;
 import org.github.es.vo.ResponseVo;
 import org.github.es.model.Person;
 import org.github.es.service.ESSearchService;

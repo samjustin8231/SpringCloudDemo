@@ -20,7 +20,6 @@ import java.net.InetAddress;
  * @author sdc
  *
  */
-@Configuration
 public class ESConfiguration implements FactoryBean<TransportClient>, InitializingBean, DisposableBean {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ESConfiguration.class);
