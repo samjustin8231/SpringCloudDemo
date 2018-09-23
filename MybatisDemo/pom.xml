@@ -78,11 +78,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- AOP依赖模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
         <!-- Web依赖模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
