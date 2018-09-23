@@ -24,8 +24,4 @@ public class UserController {
         return user;
     }
 
-    public void test1() {
-        int a;
-        int b;
-    }
 }
